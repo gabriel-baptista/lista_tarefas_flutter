@@ -34,12 +34,6 @@ jobs:
       run: flutter/bin/flutter config --enable-web
     - name: Build app
       run: flutter/bin/flutter build web
-    - name: Deploy hosting on firebase
-      uses: w9jds/firebase-action@master
-      with:
-        args: deploy --only hosting
-      env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         
     - name: Deploy hosting on Linux server
       uses: appleboy/scp-action@master
